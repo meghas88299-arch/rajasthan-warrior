@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Rajasthan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="milky-way-bg">
+
+    <div id="auth-screen" class="container">
+        <div class="card">
+            <h1>WARRIOR LOGIN</h1>
+            <input type="text" id="username" placeholder="Name">
+            <button onclick="handleLogin()" class="start-btn">LOGIN</button>
+        </div>
+    </div>
+
+    <div id="welcome-screen" class="container hidden">
+        <div class="card">
+            <h2>SELECT WORLD</h2>
+            <input type="text" id="examInput" placeholder="lab assistant / ras">
+            <button onclick="startMission()" class="start-btn">START MISSION</button>
+        </div>
+    </div>
+
+    <div id="map-screen" class="container hidden">
+        <div class="card">
+            <h1 id="map-title">WORLD MAP</h1>
+            <div class="nodes">
+                <button onclick="openLevel('History')">HISTORY STAGE</button>
+                <button onclick="openLevel('Geography')">GEOGRAPHY STAGE</button>
+                <button onclick="openLevel('Science')">SCIENCE STAGE</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="level-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modal-title">Phase</h2>
+            <button onclick="startQuiz('easy')" class="diff-btn">EASY (PHASE 1)</button>
+            <button onclick="startQuiz('medium')" class="diff-btn">MEDIUM (PHASE 2)</button>
+            <button onclick="startQuiz('hard')" class="diff-btn">HARD (PHASE 3)</button>
+            <button onclick="closeLevel()">BACK</button>
+        </div>
+    </div>
+
+    <div id="quiz-screen" class="container hidden">
+        <div class="card">
+            <div class="quiz-header"><span id="q-count"></span> | <span id="q-score"></span></div>
+            <h2 id="question-text"></h2>
+            <div id="options-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
